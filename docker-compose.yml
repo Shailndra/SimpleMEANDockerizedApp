@@ -1,0 +1,25 @@
+version: '3.7'   # docker-compose version
+services:
+  angular: #angularApp
+   container_name: angularappdocker
+   build: '/home/shailendra/meanApp/angular'
+   ports:
+     - "4200:4200"
+
+  nodejs: #nodejsapp
+   container_name: nodejsappdocker
+   build: '/home/shailendra/meanApp/dockerizedNode'
+   ports:
+     - "3000:3000"
+
+  databse: #mongodb
+   container_name: mongodbdocker
+   image: mongo
+   ports :
+     - "2700:2700"
+
+  server: #webserver
+   container_name: nginxdocker
+   image: nginx
+   ports:
+     - "80:80"
